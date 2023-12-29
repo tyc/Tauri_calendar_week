@@ -1,0 +1,169 @@
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.dayweek {
+  background-color: #444;
+  color: #fff;
+  padding: 10px;
+  font-size: 80%;
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+.calendarweek {
+  background-color: rgb(171, 235, 198);
+  color:  rgb(0, 0, 0);
+  padding: 10px;
+  font-size: 80%;
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+.day {
+  background-color: #58D68D;
+  color: #000000;
+  padding: 10px;
+  font-size: 80%;
+  text-align: center; 
+  vertical-align: middle; 
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  /* 
+   font-size: 15pt;
+   border: 1px solid blue;
+   text-align: center;
+   vertical-align: middle;
+ */
+ 
+   width: 100%;
+   text-align: center;
+   vertical-align: middle;
+   background-color: #FF6860;
+   padding: 10px;
+   font-size: 170%;
+ }
+ 
+
+.calendar_date_cell {
+ /* 
+  font-size: 15pt;
+  border: 1px solid blue;
+  text-align: center;
+  vertical-align: middle;
+*/
+
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #FF6860;
+  padding: 10px;
+  font-size: 170%;
+}
+
+.controls_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr); 
+  grid-template-areas:
+  "prev_mth calendar_date_cell calendar_date_cell calendar_date_cell next mth"; 
+}
+
+.grid div:hover {
+  background-color: #797676;
+}
+
+.grid {
+  display: grid;
+  grid-gap : 3px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+
+  grid-template-areas: 
+    ".          dayweek_mon  dayweek_tue  dayweek_wed  dayweek_thu  dayweek_fri  dayweek_sat  dayweek_sun"
+  "cw_cell_00 date_cell_00 date_cell_01 date_cell_02 date_cell_03 date_cell_04 date_cell_05 date_cell_06"
+  "cw_cell_10 date_cell_10 date_cell_11 date_cell_12 date_cell_13 date_cell_14 date_cell_15 date_cell_16"
+  "cw_cell_20 date_cell_20 date_cell_21 date_cell_22 date_cell_23 date_cell_24 date_cell_25 date_cell_26"
+  "cw_cell_30 date_cell_30 date_cell_31 date_cell_32 date_cell_33 date_cell_34 date_cell_35 date_cell_36"
+  "cw_cell_40 date_cell_40 date_cell_41 date_cell_42 date_cell_43 date_cell_44 date_cell_45 date_cell_46"
+  "cw_cell_50 date_cell_50 date_cell_51 date_cell_52 date_cell_53 date_cell_54 date_cell_55 date_cell_56";
+}
+
+.calendar_week_cell { grid-area: calendar_week_cell; }
+.calendar_date_cell { grid-area: calendar_date_cell; }
+.prev_mth { grid-area: prev_mth; }
+.next_mth { grid-area: next_mth; }
+.mon {grid-area: dayweek_mon; }
+.tue {grid-area: dayweek_tue; }
+.wed {grid-area: dayweek_wed; }
+.thu {grid-area: dayweek_thu; }
+.fri {grid-area: dayweek_fri; }
+.sat {grid-area: dayweek_sat; }
+.sun {grid-area: dayweek_sun; }
+.cw_cell_00 {  grid-area: cw_cell_00; }
+.cw_cell_10 {  grid-area: cw_cell_10; }
+.cw_cell_20 {  grid-area: cw_cell_20; }
+.cw_cell_30 {  grid-area: cw_cell_30; }
+.cw_cell_40 {  grid-area: cw_cell_40; }
+.cw_cell_50 {  grid-area: cw_cell_50; }
+.date_cell_00 {  grid-area: date_cell_00; }
+.date_cell_01 {  grid-area: date_cell_01; }
+.date_cell_02 {  grid-area: date_cell_02; }
+.date_cell_03 {  grid-area: date_cell_03; }
+.date_cell_04 {  grid-area: date_cell_04; }
+.date_cell_05 {  grid-area: date_cell_05; }
+.date_cell_06 {  grid-area: date_cell_06; }
+.date_cell_10 {  grid-area: date_cell_10; }
+.date_cell_11 {  grid-area: date_cell_11; }
+.date_cell_12 {  grid-area: date_cell_12; }
+.date_cell_13 {  grid-area: date_cell_13; }
+.date_cell_14 {  grid-area: date_cell_14; }
+.date_cell_15 {  grid-area: date_cell_15; }
+.date_cell_16 {  grid-area: date_cell_16; }
+.date_cell_20 {  grid-area: date_cell_20; }
+.date_cell_21 {  grid-area: date_cell_21; }
+.date_cell_22 {  grid-area: date_cell_22; }
+.date_cell_23 {  grid-area: date_cell_23; }
+.date_cell_24 {  grid-area: date_cell_24; }
+.date_cell_25 {  grid-area: date_cell_25; }
+.date_cell_26 {  grid-area: date_cell_26; }
+.date_cell_30 {  grid-area: date_cell_30; }
+.date_cell_31 {  grid-area: date_cell_31; }
+.date_cell_32 {  grid-area: date_cell_32; }
+.date_cell_33 {  grid-area: date_cell_33; }
+.date_cell_34 {  grid-area: date_cell_34; }
+.date_cell_35 {  grid-area: date_cell_35; }
+.date_cell_36 {  grid-area: date_cell_36; }
+.date_cell_40 {  grid-area: date_cell_40; }
+.date_cell_41 {  grid-area: date_cell_41; }
+.date_cell_42 {  grid-area: date_cell_42; }
+.date_cell_43 {  grid-area: date_cell_43; }
+.date_cell_44 {  grid-area: date_cell_44; }
+.date_cell_45 {  grid-area: date_cell_45; }
+.date_cell_46 {  grid-area: date_cell_46; }
+.date_cell_50 {  grid-area: date_cell_50; }
+.date_cell_51 {  grid-area: date_cell_51; }
+.date_cell_52 {  grid-area: date_cell_52; }
+.date_cell_53 {  grid-area: date_cell_53; }
+.date_cell_54 {  grid-area: date_cell_54; }
+.date_cell_55 {  grid-area: date_cell_55; }
+.date_cell_56 {  grid-area: date_cell_56; }
+
+
