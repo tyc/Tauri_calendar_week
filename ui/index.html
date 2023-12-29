@@ -9,9 +9,9 @@
   <body>
     <section>
       <div class="controls_grid">
-      <button id="prev_mth" class="controls"><--</button>
-      <div class="calendar_date_cell">January 2018</div>
-      <button id="next_mth" class="controls">--></button>
+      <button id="prev_mth" class="controls" onClick="handle_left_button()"><--</button>
+      <div id="calendar_date_cell" class="calendar_date_cell">January 2018</div>
+      <button id="next_mth" class="controls" onClick="handle_right_button()">--></button>
     </div>
     </section>
       <div class="grid">
@@ -76,7 +76,37 @@
         <div id="date_cell_56" class="day date_cell_56">56</div>
       </div>
     <script>
-      require('./renderer')
+      // require('./renderer')
+
+      // access the pre-bundled global API functions
+      const { invoke } = window.__TAURI__.tauri
+
+      // now we can call our Command!
+      // You will see "Welcome from Tauri" replaced
+      // by "Hello, World!"!
+       invoke('startup', { name: 'Magic Mushroom' })
+      // `invoke` returns a Promise
+       .then((response) => {
+          window.header.innerHTML = response
+      })
+
+      function handle_left_button() {
+        invoke('handle_left_button', { name: 'Magic Carrot' })
+      // `invoke` returns a Promise
+      .then((response) => {
+        document.getElementById("calendar_date_cell").innerHTML=response
+      })
+
+      }
+
+      function handle_right_button() {
+        invoke('handle_right_button', { name: 'Magic Turnip' })
+      // `invoke` returns a Promise
+      .then((response) => {
+        document.getElementById("calendar_date_cell").innerHTML=response
+      })
+      }
+
     </script>
   </body>
 </html>
