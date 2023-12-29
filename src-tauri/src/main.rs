@@ -27,4 +27,6 @@ fn main() {
     .invoke_handler(tauri::generate_handler![startup, handle_left_button, handle_right_button])
     .run(tauri::generate_context!())
     .expect("error while running tauri application");
+
+  println!("starting up");
   }
